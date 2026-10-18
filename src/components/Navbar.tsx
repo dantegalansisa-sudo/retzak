@@ -31,7 +31,7 @@ export default function Navbar() {
         transition={{ duration: 0.9, ease: EASINGS.premium, delay: 0.2 }}
       >
         <div className="nav__inner container">
-          <a href="#inicio" className="nav__logo" aria-label="Retzak Solar Tech — inicio">
+          <a href="#inicio" className="nav__logo" aria-label="Egersa Solar — inicio">
             <Logo />
           </a>
 
@@ -45,9 +45,9 @@ export default function Navbar() {
 
           <div className="nav__actions">
             <MagneticButton href={waLink()} className="btn btn--sun nav__cta">
-              <span className="hide-sm">Solicita cotización</span>
+              <span className="hide-sm">Solicitar presupuesto</span>
               <span className="show-sm">
-                <WhatsAppIcon size={18} /> Cotiza ahora
+                <WhatsAppIcon size={18} /> Cotizar
               </span>
               <ArrowRight size={18} className="hide-sm" />
             </MagneticButton>

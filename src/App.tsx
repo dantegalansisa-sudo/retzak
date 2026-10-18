@@ -9,7 +9,8 @@ import Marquee from './components/Marquee';
 import About from './components/About';
 import Process from './components/Process';
 import Calculator from './components/Calculator';
-import Testimonials from './components/Testimonials';
+import Projects from './components/Projects';
+import Financing from './components/Financing';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Contact from './components/Contact';
@@ -55,12 +56,13 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Solutions />
         <Marquee />
+        <Solutions />
         <About />
         <Process />
+        <Projects />
         <Calculator />
-        <Testimonials />
+        <Financing />
         <FAQ />
         <CTA />
         <Contact />

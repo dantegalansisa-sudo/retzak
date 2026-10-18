@@ -1,20 +1,24 @@
-# Retzak Solar Tech — Web demo
+# Egersa Solar — Web demo
 
-Landing page demo para **Retzak Solar Tech**, empresa de paneles solares, inversores y baterías de respaldo en República Dominicana.
+Nueva web demo para **Egersa Solar** (egersacaribe.com), empresa de energía solar en República Dominicana desde 2011: sistemas On Grid, aislados, híbridos, bombeo solar, mantenimiento y medición energética para industrias, comercios y residencias.
 
-**Stack:** React + TypeScript + Vite + Framer Motion + Lenis (scroll suave) + Vanilla CSS.
+**Stack:** React + TypeScript + Vite + Framer Motion + Lenis (scroll suave) + CSS.
+**Identidad:** azul petróleo `#2F5166` + verde `#4BB37D` (colores de la marca), Montserrat + Inter.
 
 ## Secciones
 
-- **Hero**: imagen principal con zoom/parallax al hacer scroll, palabra gigante "RETZAK" animada, widgets de producción en vivo (kW y kWh animados) y banda inferior con mensaje principal y testimonio.
-- **Soluciones**: paneles, inversores y baterías con imágenes en parallax.
-- **Por qué Retzak**: beneficios y contadores animados.
-- **Proceso**: 4 pasos con línea de progreso ligada al scroll.
-- **Calculadora de ahorro**: estimado interactivo según la factura mensual; envía el resultado por WhatsApp.
-- **Testimonios**, **Preguntas frecuentes**, **CTA final** y **Contacto** (el formulario abre WhatsApp con el mensaje armado).
-- Cursor personalizado, botones magnéticos, titulares con efecto reveal, menú móvil animado y botón flotante de WhatsApp.
+- **Hero** — "EGERSA" gigante animado, contadores en vivo de energía ahorrada y CO₂ evitado (mismos valores para todos los visitantes), +500 instalaciones y certificaciones CNE · ASOFER · INDOCAL.
+- **Clientes** — Medtronic, TotalEnergies, Texaco, EcoPetróleo, Banco Popular y más.
+- **Servicios** — explorador interactivo con los servicios, beneficios y para quién es cada uno.
+- **Nosotros** — historia, misión, visión, valores, diferenciadores y video institucional.
+- **Proceso** — 4 pasos (evaluación, diseño, instalación y medidor, soporte).
+- **Proyectos** — caso destacado (Estación Total La Aurora) + portafolio filtrable.
+- **Calculadora de ahorro** — residencial / comercial / industrial; envía el estimado por WhatsApp.
+- **Financiamiento** — condiciones para personas y empresas, bancos aliados, pago de contado y descuento ISR.
+- **FAQ** — preguntas reales del cliente (generales y financiamiento).
+- **Contacto** — formulario que arma el mensaje con factura y ubicación y lo abre en WhatsApp.
 
-Contacto configurado en `src/data/site.ts` (WhatsApp / teléfono **809-223-5005**).
+Datos de contacto en `src/data/site.ts`.
 
 ## Desarrollo
 
@@ -29,12 +33,11 @@ npm run dev
 npm run build
 ```
 
-La carpeta `dist/` queda lista para desplegar (Vercel, Netlify, etc.). En Vercel se detecta automáticamente como proyecto Vite.
+`dist/` queda listo para Vercel / Netlify (Vercel lo detecta como proyecto Vite).
 
-## Recursos
+## Pendiente de confirmar con el cliente
 
-- `Retzak_Solar_Tech_Assets/` — imágenes originales y maqueta de referencia.
-- `public/images/` — imágenes optimizadas (WebP) usadas por la web.
-- Los PNG de la raíz son las maquetas de referencia (PC y móvil).
-
-> Demo: los testimonios, cifras y textos son contenido de ejemplo para presentación al cliente.
+- Número de WhatsApp (se usa el del centro de contacto 809-732-8579), email, horario y redes.
+- Logo oficial en vector (el actual es un logotipo provisional en SVG).
+- Fotos reales de instalaciones y datos técnicos por proyecto.
+- Cifras del caso destacado, tasas de financiamiento vigentes y testimonios reales.

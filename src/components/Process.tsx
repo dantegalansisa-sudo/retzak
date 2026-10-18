@@ -9,23 +9,23 @@ import { EASINGS } from '../utils/easings';
 const STEPS = [
   {
     icon: ClipboardCheck,
-    title: 'Evaluación gratuita',
-    text: 'Analizamos tu factura eléctrica, tu consumo y tu techo para entender exactamente lo que necesitas.',
+    title: 'Evaluación sin costo',
+    text: 'Nos envías tu última factura eléctrica y la ubicación. Con eso analizamos tu consumo del último año y el espacio disponible.',
   },
   {
     icon: PencilRuler,
-    title: 'Diseño a la medida',
-    text: 'Dimensionamos paneles, inversor y baterías para maximizar tu ahorro y tu respaldo energético.',
+    title: 'Diseñamos y enviamos',
+    text: 'Diseñamos en software un sistema a la medida de tu consumo y seleccionamos los equipos entre más de 66 fabricantes.',
   },
   {
     icon: HardHat,
-    title: 'Instalación profesional',
-    text: 'Nuestro equipo instala tu sistema de forma limpia, segura y en el menor tiempo posible.',
+    title: 'Instalación y medidor',
+    text: 'Instalamos con precisión y gestionamos ante tu distribuidora el cambio al medidor bidireccional. Trabajamos con todas las EDE.',
   },
   {
     icon: LineChart,
-    title: 'Monitoreo y soporte',
-    text: 'Sigue tu producción en tiempo real y cuenta con soporte local y mantenimiento cuando lo necesites.',
+    title: 'Ahorro, monitoreo y soporte',
+    text: 'Empiezas a ahorrar desde el primer mes, con monitoreo remoto, mantenimiento y asistencia técnica 24/7.',
   },
 ];
 
@@ -38,16 +38,16 @@ export default function Process() {
     <section id="proceso" className="section process">
       <div className="container process__grid">
         <div className="process__intro">
-          <span className="eyebrow">Cómo funciona</span>
+          <span className="eyebrow">Proceso</span>
           <RevealText tag="h2" className="section-title">
-            {[{ text: 'De tu factura' }, { text: 'al sol en 4 pasos', className: 'text-gold' }]}
+            {[{ text: '¡Cómo funciona!' }, { text: 'En 4 pasos', className: 'text-gold' }]}
           </RevealText>
           <p className="section-lead">
-            Un proceso simple y transparente. Te acompañamos desde la primera visita hasta que tu sistema produce
-            energía, y después también.
+            Solo vendemos proyectos completos: diseño, instalación y servicio. Te acompañamos desde la primera
+            evaluación hasta que tu sistema produce energía, y después también.
           </p>
-          <MagneticButton href={waLink('Hola Retzak, quiero agendar una evaluación gratuita.')} className="btn btn--dark btn--lg">
-            Agenda tu evaluación
+          <MagneticButton href={waLink('Hola Egersa Solar, quiero agendar mi evaluación sin costo.')} className="btn btn--dark btn--lg">
+            Solicitar evaluación
           </MagneticButton>
         </div>
 

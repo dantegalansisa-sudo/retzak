@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Leaf, ShieldCheck, BarChart3 } from 'lucide-react';
+import { ArrowRight, Leaf, Landmark, Headset } from 'lucide-react';
 import RevealText from './RevealText';
 import MagneticButton from './MagneticButton';
 import { waLink } from '../data/site';
@@ -19,13 +19,13 @@ export default function CTA() {
           <motion.img className="cta__bg" src="/images/cta.webp" alt="" style={{ y, scale }} loading="lazy" />
           <div className="cta__veil" />
           <div className="cta__content">
-            <span className="eyebrow eyebrow--light">Un futuro más limpio</span>
+            <span className="eyebrow eyebrow--light">Evaluación sin costo</span>
             <RevealText tag="h2" className="cta__title">
-              {[{ text: 'Hagamos tu hogar' }, { text: 'más solar hoy', className: 'text-sun' }]}
+              {[{ text: 'Independencia con' }, { text: 'el poder del sol', className: 'text-sun' }]}
             </RevealText>
-            <p>Asesoría personalizada para tu hogar o negocio en toda la República Dominicana.</p>
+            <p>Solicita hoy mismo tu evaluación gratuita y descubre cómo puedes comenzar a ahorrar con energía solar.</p>
             <MagneticButton href={waLink()} className="btn btn--sun btn--lg">
-              Solicita tu cotización <ArrowRight size={20} />
+              ¡Solicitar presupuesto! <ArrowRight size={20} />
             </MagneticButton>
           </div>
           <motion.ul
@@ -36,9 +36,9 @@ export default function CTA() {
             viewport={{ once: true }}
           >
             {[
-              { icon: Leaf, t: 'Energía limpia' },
-              { icon: ShieldCheck, t: 'Mayor ahorro' },
-              { icon: BarChart3, t: 'Un futuro mejor' },
+              { icon: Leaf, t: 'Hasta 99% de ahorro' },
+              { icon: Landmark, t: 'Financiamiento bancario' },
+              { icon: Headset, t: 'Asistencia 24/7' },
             ].map(({ icon: Icon, t }) => (
               <motion.li key={t} variants={cardVariants}>
                 <span className="badge-ring badge-ring--light">

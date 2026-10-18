@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, Building2, Sun, Leaf, PiggyBank, ArrowRight } from 'lucide-react';
+import { Home, Building2, Factory, Sun, Leaf, PiggyBank, ArrowRight } from 'lucide-react';
 import RevealText from './RevealText';
 import MagneticButton from './MagneticButton';
 import { waLink } from '../data/site';
@@ -8,6 +8,12 @@ import { waLink } from '../data/site';
 const TARIFF = 12; // RD$/kWh promedio estimado
 const SUN_HOURS = 4.8;
 const PANEL_KW = 0.55;
+
+const TYPES = [
+  { id: 'residencial', label: 'Residencial', icon: Home, coverage: 0.9 },
+  { id: 'comercial', label: 'Comercial', icon: Building2, coverage: 0.88 },
+  { id: 'industrial', label: 'Industrial', icon: Factory, coverage: 0.85 },
+] as const;
 
 const fmt = (n: number) => n.toLocaleString('es-DO', { maximumFractionDigits: 0 });
 
@@ -31,11 +37,12 @@ function Rolling({ value, prefix = '' }: { value: string; prefix?: string }) {
 }
 
 export default function Calculator() {
-  const [bill, setBill] = useState(8500);
-  const [type, setType] = useState<'hogar' | 'negocio'>('hogar');
+  const [bill, setBill] = useState(12000);
+  const [typeIdx, setTypeIdx] = useState(0);
+  const type = TYPES[typeIdx];
 
   const r = useMemo(() => {
-    const coverage = type === 'hogar' ? 0.85 : 0.8;
+    const coverage = type.coverage;
     const kwhMonth = bill / TARIFF;
     const kwp = Math.max(1.1, (kwhMonth * coverage) / (30 * SUN_HOURS * 0.8));
     const panels = Math.ceil(kwp / PANEL_KW);
@@ -44,11 +51,14 @@ export default function Calculator() {
     return { kwp, panels, monthly, yearly: monthly * 12, co2 };
   }, [bill, type]);
 
-  const min = 2000;
-  const max = 150000;
+  const min = 6000;
+  const max = 300000;
   const pct = ((bill - min) / (max - min)) * 100;
 
-  const message = `Hola Retzak Solar Tech 👋 Quiero una cotización.\n• Tipo: ${type === 'hogar' ? 'Hogar' : 'Negocio'}\n• Factura mensual aprox.: RD$ ${fmt(bill)}\n• Sistema estimado: ${r.kwp.toFixed(1)} kWp (${r.panels} paneles)`;
+  const message = `Hola Egersa Solar, quiero una evaluación sin costo.
+• Tipo de proyecto: ${type.label}
+• Factura mensual aprox.: RD$ ${fmt(bill)}
+• Sistema estimado: ${r.kwp.toFixed(1)} kWp (${r.panels} paneles)`;
 
   return (
     <section id="calculadora" className="section calc">
@@ -60,21 +70,21 @@ export default function Calculator() {
             <RevealText tag="h2" className="section-title section-title--light">
               {[{ text: '¿Cuánto podrías' }, { text: 'ahorrar con el sol?', className: 'text-sun' }]}
             </RevealText>
-            <p className="calc__lead">Mueve el control con el monto aproximado de tu factura de luz y descubre tu ahorro estimado.</p>
+            <p className="calc__lead">Mueve el control con el monto de tu factura de luz. Con energía solar puedes ahorrar hasta el 99%, y el excedente se te paga al final del año.</p>
 
             <div className="calc__toggle" role="radiogroup" aria-label="Tipo de propiedad">
-              {(['hogar', 'negocio'] as const).map((t) => (
+              {TYPES.map((t, i) => (
                 <button
-                  key={t}
+                  key={t.id}
                   role="radio"
-                  aria-checked={type === t}
-                  className={type === t ? 'is-active' : ''}
-                  onClick={() => setType(t)}
+                  aria-checked={i === typeIdx}
+                  className={i === typeIdx ? 'is-active' : ''}
+                  onClick={() => setTypeIdx(i)}
                 >
-                  {type === t && <motion.span layoutId="calcToggle" className="calc__toggle-bg" />}
+                  {i === typeIdx && <motion.span layoutId="calcToggle" className="calc__toggle-bg" />}
                   <span className="calc__toggle-label">
-                    {t === 'hogar' ? <Home size={18} /> : <Building2 size={18} />}
-                    {t === 'hogar' ? 'Hogar' : 'Negocio'}
+                    <t.icon size={18} />
+                    {t.label}
                   </span>
                 </button>
               ))}
@@ -98,8 +108,8 @@ export default function Calculator() {
               style={{ ['--pct' as string]: `${pct}%` }}
             />
             <div className="calc__scale">
-              <span>RD$ 2,000</span>
-              <span>RD$ 150,000</span>
+              <span>RD$ 6,000</span>
+              <span>RD$ 300,000+</span>
             </div>
           </div>
 
@@ -140,9 +150,9 @@ export default function Calculator() {
               </div>
             </div>
             <MagneticButton href={waLink(message)} className="btn btn--sun btn--lg btn--block">
-              Recibir cotización exacta <ArrowRight size={20} />
+              Solicitar evaluación sin costo <ArrowRight size={20} />
             </MagneticButton>
-            <p className="calc__note">*Valores referenciales. Tu cotización final depende de tu consumo real y tu techo.</p>
+            <p className="calc__note">*Valores referenciales. El diseño final depende de tu consumo real, tu ubicación y el tipo de techo. Recomendado para facturas desde RD$6,000/mes.</p>
           </div>
         </div>
       </div>

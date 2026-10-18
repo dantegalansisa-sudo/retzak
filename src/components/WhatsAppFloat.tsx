@@ -28,7 +28,7 @@ export default function WhatsAppFloat() {
         >
           <span className="wa-float__pulse" />
           <WhatsAppIcon size={28} />
-          <span className="wa-float__tip">¿Hablamos?</span>
+          <span className="wa-float__tip">Evaluación sin costo</span>
         </motion.a>
       )}
     </AnimatePresence>
