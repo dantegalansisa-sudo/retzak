@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Phone, MapPin, Globe2, Send, ArrowUpRight } from 'lucide-react';
 import RevealText from './RevealText';
 import { WhatsAppIcon } from './Icons';
-import { ADDRESS_LINES, MAPS_URL, PHONE_DISPLAY, PHONE_E164, waLink } from '../data/site';
+import { ADDRESS_LINES, MAPS_URL, PHONE_DISPLAY, PHONE_E164, WA_DISPLAY, waLink } from '../data/site';
 import { fadeUp } from '../utils/easings';
 
 const INTERESTS = ['On Grid', 'Aislado / Off Grid', 'Híbrido', 'Bombeo solar', 'Mantenimiento', 'Medición energética'];
@@ -72,7 +72,7 @@ export default function Contact() {
               </span>
               <div>
                 <small>WhatsApp</small>
-                <b>Escríbenos ahora</b>
+                <b>{WA_DISPLAY}</b>
               </div>
             </a>
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="contact__card contact__card--wide">

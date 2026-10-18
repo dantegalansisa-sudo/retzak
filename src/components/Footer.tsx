@@ -1,6 +1,6 @@
 import { ArrowUp, BadgeCheck } from 'lucide-react';
 import Logo from './Logo';
-import { ADDRESS_LINES, CERTIFICATIONS, MAPS_URL, NAV, PHONE_DISPLAY, PHONE_E164, waLink } from '../data/site';
+import { ADDRESS_LINES, CERTIFICATIONS, MAPS_URL, NAV, PHONE_DISPLAY, PHONE_E164, WA_DISPLAY, waLink } from '../data/site';
 
 export default function Footer() {
   return (
@@ -42,7 +42,7 @@ export default function Footer() {
             <h4>Contacto</h4>
             <a href={`tel:${PHONE_E164}`}>{PHONE_DISPLAY}</a>
             <a href={waLink()} target="_blank" rel="noopener noreferrer">
-              WhatsApp
+              WhatsApp {WA_DISPLAY}
             </a>
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
               {ADDRESS_LINES[0]}, {ADDRESS_LINES[1]}

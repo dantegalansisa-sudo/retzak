@@ -18,7 +18,7 @@ Nueva web demo para **Egersa Solar** (egersacaribe.com), empresa de energía sol
 - **FAQ** — preguntas reales del cliente (generales y financiamiento).
 - **Contacto** — formulario que arma el mensaje con factura y ubicación y lo abre en WhatsApp.
 
-Datos de contacto en `src/data/site.ts`.
+Datos de contacto en `src/data/site.ts` (teléfono 809-732-8579 · WhatsApp 809-997-6215).
 
 ## Desarrollo
 
@@ -37,7 +37,7 @@ npm run build
 
 ## Pendiente de confirmar con el cliente
 
-- Número de WhatsApp (se usa el del centro de contacto 809-732-8579), email, horario y redes.
+- Email, horario y redes sociales.
 - Logo oficial en vector (el actual es un logotipo provisional en SVG).
 - Fotos reales de instalaciones y datos técnicos por proyecto.
 - Cifras del caso destacado, tasas de financiamiento vigentes y testimonios reales.
